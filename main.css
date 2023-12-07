@@ -8,7 +8,7 @@
 
 body {
   height: 100vh;
-  background: url(back.jpeg) no-repeat center center/cover;
+  background: url(newback.jpeg) no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,8 +16,11 @@ body {
 
 .container {
   width: 500px;
+  animation: 1s ease-out 0s 1 slideInLeft;
+  transition: all 0.4s ease-in-out;
   padding: 30px;
   border: 1px solid #313131c0;
+  /* border: 5px solid #ff0000; */
   border-radius: 30px;
   backdrop-filter: blur(30px);
 }
@@ -34,7 +37,7 @@ input[type="text"] {
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 50%;
+  width: 40%;
   outline: none;
   transition: all 0.4s ease-in-out;
 }
@@ -67,4 +70,19 @@ input[type="submit"] {
   color: white;
   font-size: 18px;
   transition: all 0.4s ease-in-out;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 300px;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
